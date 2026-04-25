@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ProTennis Coaching Website
 
-## Getting Started
+A professional tennis coach website built with Next.js, Tailwind CSS, and Supabase. Features a clean, athlete-focused design, service listings, and a fully functional session booking system.
 
-First, run the development server:
+## Tech Stack
+- Frontend: Next.js (App Router), React, Tailwind CSS
+- Backend API: Next.js Route Handlers
+- Database: Supabase (PostgreSQL)
+- Deployment: Vercel
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Local Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd tennis-coach-site
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Variables:**
+   Create a `.env.local` file in the root directory and add your Supabase credentials:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment to Vercel
+
+1. Push your code to a GitHub repository.
+2. Log in to [Vercel](https://vercel.com).
+3. Create a **New Project** and import your GitHub repository.
+4. During the setup, expand the **Environment Variables** section.
+5. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` with your Supabase values.
+6. Click **Deploy**. Vercel will automatically build and host your Next.js application.
+
+## Database Setup (Supabase)
+
+Run the following SQL in your Supabase project's SQL Editor to create the necessary table and security policies:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE bookings (
+    id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+    name text NOT NULL,
+    phone text NOT NULL,
+    date date NOT NULL,
+    time text NOT NULL,
+    created_at timestamp DEFAULT now(),
+    UNIQUE(date, time)
+);
+
+ALTER TABLE bookings ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Allow anonymous inserts" ON bookings FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public read" ON bookings FOR SELECT USING (true);
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
