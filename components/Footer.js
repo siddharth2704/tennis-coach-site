@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <span className="font-display font-bold text-2xl text-white tracking-[0.2em] uppercase">
-            Deepshikha<span className="text-[#ccff00]">.</span>
+            Deepshikha Saw<span className="text-[#ccff00]">.</span>
           </span>
           <p className="mt-2 text-sm font-light">Elite tennis coaching by a former professional player.</p>
         </div>
