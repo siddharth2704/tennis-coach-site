@@ -26,6 +26,7 @@ A professional tennis coach website built with Next.js, Tailwind CSS, and Supaba
    ```env
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   WHATSAPP_WEBHOOK_URL=your_webhook_url_here  # Optional: For new booking alerts
    ```
 
 4. **Run the development server:**

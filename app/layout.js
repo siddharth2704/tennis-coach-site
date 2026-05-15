@@ -1,30 +1,30 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
 export const metadata = {
-  title: "ProTennis | Professional Tennis Coaching",
-  description: "Book your professional tennis coaching session today.",
+  title: "Deepshikha | Elite Tennis Coaching",
+  description: "Professional tennis coaching tailored to your level. Master your technique, build stamina, and dominate the court with a former pro.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${outfit.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-black text-white">
+      <body className="min-h-full flex flex-col bg-black text-zinc-300 font-sans selection:bg-[#ccff00] selection:text-black">
         <Navbar />
         <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
