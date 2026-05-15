@@ -11,8 +11,8 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=2000&auto=format&fit=crop"
-          alt="Tennis Action"
+          src="/gallery/Banners-01.jpg"
+          alt="Deepshikha Tennis Action"
           className="w-full h-full object-cover opacity-60 mix-blend-overlay"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />

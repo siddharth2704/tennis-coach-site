@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShoppingCart, ExternalLink, BookOpen } from "lucide-react";
+import { ShoppingCart, ExternalLink } from "lucide-react";
 
 export default function AuthorSection() {
   return (
@@ -17,23 +17,14 @@ export default function AuthorSection() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-5 relative"
           >
-            <div className="aspect-[3/4] rounded-sm bg-zinc-900 border border-zinc-800 shadow-2xl flex flex-col items-center justify-center p-8 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-black opacity-50"></div>
+            <div className="aspect-[3/4] rounded-xl flex flex-col items-center justify-center p-4 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/30 to-black/30 opacity-50 z-0"></div>
               
-              <BookOpen className="w-16 h-16 text-zinc-700 mb-6 relative z-10 group-hover:scale-110 transition-transform duration-500" />
-              
-              <h3 className="text-3xl font-display font-light text-center leading-tight relative z-10 tracking-widest uppercase">
-                I Wish <br />
-                You Were <br />
-                Not Here
-              </h3>
-              
-              <p className="mt-8 text-zinc-500 font-mono text-xs uppercase tracking-widest relative z-10">
-                By Deepshikha
-              </p>
-              
-              {/* Decorative line */}
-              <div className="absolute top-0 bottom-0 left-8 w-[1px] bg-zinc-800"></div>
+              <img 
+                src="/gallery/I Wish you were not here (1).png" 
+                alt="I Wish You Were Not Here Book Cover" 
+                className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(204,255,0,0.1)] group-hover:scale-105 transition-transform duration-500" 
+              />
             </div>
           </motion.div>
 
